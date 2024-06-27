@@ -1,0 +1,34 @@
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container table thead {
+  border-bottom: 1px solid #ddd;
+}
+
+.container table td,
+.container table th {
+  padding-inline: 10px;
+  padding-block: 20px;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.container table thead tr {
+  font-weight: 500;
+  font-family: "CircularXXTrialWeb-Medium", sans-serif;
+}
+
+.container table tbody tr:nth-child(even) {
+  background-color: #f2f2f205;
+}
+
+.container table tbody tr {
+  transition: all 50ms ease-in;
+}
+.container table tbody tr:hover {
+  background-color: #f2f2f210;
+}

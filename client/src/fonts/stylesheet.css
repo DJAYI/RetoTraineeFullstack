@@ -1,0 +1,109 @@
+/*
+ *
+ * INSTRUCTIONS
+ *
+ * Copy the Legal Disclaimer and the @font-faces statements to your regular CSS file.
+ * The font file(s) should be placed relative to the regular CSS file.
+ *
+ */
+
+/*
+ * Legal Disclaimer for Trial Licence licence
+ *
+ * Trial Licence
+ *
+ * Trial Web License for evaluation, testing and presentation purposes on internal domains without public access only.
+ * 
+ * The font files may not be distributed, published or used on any other domain(s).
+ * 
+ * Any further use is strictly prohibited.
+ *
+ * For internal test and presentation use only.
+ * For both print use and web / electronic use on internal domains without public access. Licencee may create documents / visuals / web pages etc. for the purpose of evaluation and presentation to clients or other interested parties.
+ * Any further use is strictly prohibited. The font files may not be distributed, published or used on any other domain(s).
+ *
+ */
+
+/* complete */
+
+@font-face {
+  font-family: "CircularXXTrialWeb-Thin";
+  src: url("CircularXXTrialWeb-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-ThinItalic";
+  src: url("CircularXXTrialWeb-ThinItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-Light";
+  src: url("CircularXXTrialWeb-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-LightItalic";
+  src: url("CircularXXTrialWeb-LightItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-Regular";
+  src: url("CircularXXTrialWeb-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-Italic";
+  src: url("CircularXXTrialWeb-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-Book";
+  src: url("CircularXXTrialWeb-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-BookItalic";
+  src: url("CircularXXTrialWeb-BookItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-Medium";
+  src: url("CircularXXTrialWeb-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-MediumItalic";
+  src: url("CircularXXTrialWeb-MediumItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-Bold";
+  src: url("CircularXXTrialWeb-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-BoldItalic";
+  src: url("CircularXXTrialWeb-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-Black";
+  src: url("CircularXXTrialWeb-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-BlackItalic";
+  src: url("CircularXXTrialWeb-BlackItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-ExtraBlack";
+  src: url("CircularXXTrialWeb-ExtraBlack.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CircularXXTrialWeb-ExtraBlackItalic";
+  src: url("CircularXXTrialWeb-ExtraBlackItalic.woff2") format("woff2");
+}
+
+

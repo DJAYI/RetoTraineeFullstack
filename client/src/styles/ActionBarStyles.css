@@ -1,0 +1,125 @@
+header .actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.action {
+  padding: 10px 20px;
+  border: none;
+  background-color: #222;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "CircularXXTrialWeb-Medium", sans-serif;
+  transition: all 100ms ease-in;
+}
+.action:hover {
+  background-color: #333;
+}
+
+header .search {
+  width: 300px;
+  padding: 12px 20px;
+  border: none;
+  background-color: #222;
+  border-radius: 20px;
+  font-size: 16px;
+  font-family: "CircularXXTrialWeb-Medium", sans-serif;
+}
+
+header .search:focus {
+  outline: none;
+  outline: #555 1px solid;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+dialog {
+  max-width: 800px;
+  border-radius: 15px;
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+dialog[open] > .dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 20px;
+  color: #fff;
+}
+
+.dialog-content strong {
+  font-size: 1.5em;
+  font-family: "CircularXXTrialWeb-Medium", sans-serif;
+}
+
+.dialog-content .checkers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  text-wrap: pretty;
+  line-height: 28px;
+}
+
+.dialog-content .checkers label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dialog-content .checkers label input {
+  margin-inline: 5px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.dialog-content .action {
+  width: fit-content;
+  margin-block: 10px;
+  padding-inline: 20px;
+  padding-block: 10px;
+}
+
+#filter-dialog .dialog-content form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  text-wrap: pretty;
+  line-height: 28px;
+}
+
+#filter-dialog .dialog-content form label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-align: center;
+
+  font-size: small;
+  font-weight: 300;
+}
+
+#filter-dialog .dialog-content form label select {
+  width: 300px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #222;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+}

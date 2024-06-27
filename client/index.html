@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./src/styles/TableStyles.css" />
+    <link rel="stylesheet" href="./src/styles/ActionBarStyles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="toggle-search">Contrataciones</h1>
+      <input
+        type="text"
+        class="search toggle-search hidden"
+        id="search"
+        placeholder="🔍 Buscar contrataciones"
+      />
+      <div class="actions">
+        <button class="action" id="btnSearch">Buscar</button>
+        <button class="action" id="btnFilter">Filtrar</button>
+        <button class="action" id="btnToggleColumns">Columnas</button>
+        <button class="action" id="btnExport">Exportar</button>
+      </div>
+    </header>
+
+    <dialog id="toggle-cols-dialog">
+      <div class="dialog-content">
+        <strong>Ocultar Columnas</strong>
+        <div class="checkers">
+          <label class="checkbox">
+            <input type="checkbox" name="checkbox" value="col-item" />
+            <span>ITEM</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="checkbox" value="col-cantidad" />
+            <span>CANTIDAD</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="checkbox" value="col-concepto" />
+            <span>CONCEPTO</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="checkbox" value="col-proveedor" />
+            <span>PROVEEDOR</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="checkbox" value="col-categoria" />
+            <span>CATEGORIA</span>
+          </label>
+          <label class="checkbox">
+            <input
+              type="checkbox"
+              name="checkbox"
+              value="col-forma-contratar"
+            />
+            <span>FORMA DE CONTRATAR</span>
+          </label>
+          <label class="checkbox">
+            <input
+              type="checkbox"
+              name="checkbox"
+              value="col-pagos-mensuales"
+            />
+            <span>PAGOS MENSUALES</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="checkbox" value="col-valor-unitario" />
+            <span>VALOR UNITARIO</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="checkbox" value="col-valor-total" />
+            <span>VALOR TOTAL (USD)</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="checkbox" value="col-valor-dolar" />
+            <span>VALOR EN DOLAR</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="checkbox" value="col-valor-anual" />
+            <span>VALOR ANUAL VIGENCIA 2024(COP)</span>
+          </label>
+        </div>
+
+        <button class="action" id="btnCloseDialog">Cerrar</button>
+      </div>
+    </dialog>
+
+    <dialog id="filter-dialog">
+      <div class="dialog-content">
+        <strong>Ocultar Columnas</strong>
+        <form action="http://localhost:3000/contrataciones/" method="post">
+          <label for="">
+            <span>ITEM</span>
+            <select name="ITEM" class="ITEM" id="filter-item">
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+          <label for="">
+            <span>CANTIDAD</span>
+            <select name="CANTIDAD" class="CANTIDAD" id="filter-cantidad">
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+          <label for="">
+            <span>CONCEPTO</span>
+            <select name="CONCEPTO" class="CONCEPTO" id="filter-concepto">
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+          <label for="">
+            <span>PROVEEDOR</span>
+            <select name="PROVEEDOR" class="PROVEEDOR" id="filter-proveedor">
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+          <label for="">
+            <span>CATEGORIA</span>
+            <select name="CATEGORIA" class="CATEGORIA" id="filter-categoria">
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+          <label for="">
+            <span>FORMA DE CONTRATAR</span>
+            <select
+              name="FORMA DE CONTRATAR"
+              class="FORMA DE CONTRATAR"
+              id="filter-forma-contratar"
+            >
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+          <label for="">
+            <span>PAGOS MENSUALES</span>
+            <select
+              name="PAGOS MENSUALES"
+              class="PAGOS MENSUALES"
+              id="filter-pagos-mensuales"
+            >
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+          <label for="">
+            <span>VALOR UNITARIO</span>
+            <select
+              name="VALOR UNITARIO"
+              class="VALOR UNITARIO"
+              id="filter-valor-unitario"
+            >
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+          <label for="">
+            <span>VALOR TOTAL (USD)</span>
+            <select
+              name="VALOR TOTAL(USD)"
+              class="VALOR TOTAL(USD)"
+              id="filter-valor-total"
+            >
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+          <label for="">
+            <span>VALOR EN DOLAR</span>
+            <select
+              name="VALOR EN DOLAR"
+              class="VALOR EN DOLAR"
+              id="filter-valor-dolar"
+            >
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+          <label for="">
+            <span>VALOR ANUAL VIGENCIA 2024(COP)</span>
+            <select
+              name="VALOR ANUAL VIGENCIA 2024(COP)"
+              id="filter-valor-anual"
+              class="VALOR ANUAL VIGENCIA 2024(COP)"
+            >
+              <option value="no-value" selected>
+                -- Selecciona una opción --
+              </option>
+            </select>
+          </label>
+        </form>
+        <button class="action" id="btnCloseFilterDialog">Cerrar</button>
+      </div>
+    </dialog>
+    <main class="container">
+      <table>
+        <thead>
+          <tr>
+            <td class="col-item">ITEM</td>
+            <td class="col-cantidad">CANTIDAD</td>
+            <td class="col-concepto">CONCEPTO</td>
+            <td class="col-proveedor">PROVEEDOR</td>
+            <td class="col-categoria">CATEGORIA</td>
+            <td class="col-forma-contratar">FORMA DE CONTRATAR</td>
+            <td class="col-pagos-mensuales">PAGOS MENSUALES</td>
+            <td class="col-valor-unitario">VALOR UNITARIO</td>
+            <td class="col-valor-total">VALOR TOTAL (USD)</td>
+            <td class="col-valor-dolar">VALOR EN DOLAR</td>
+            <td class="col-valor-anual">VALOR ANUAL VIGENCIA 2024(COP)</td>
+          </tr>
+        </thead>
+        <tbody id="table-content-body"></tbody>
+      </table>
+    </main>
+    <aside>
+      <div class="pagination" id="pagination"></div>
+    </aside>
+
+    <script src="./src/scripts/actions/Pagination.js" type="module"></script>
+    <script src="./src/scripts/actions/Search.js" type="module"></script>
+    <script src="./src/scripts/actions/ExportJSON.js" type="module"></script>
+    <script src="./src/scripts/actions/Filter.js" type="module"></script>
+    <script src="./src/scripts/actions/ToggleCols.js" type="module"></script>
+  </body>
+</html>
