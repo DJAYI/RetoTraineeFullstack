@@ -3,6 +3,7 @@
   border-collapse: collapse;
   margin-top: 20px;
   margin-bottom: 20px;
+  padding-inline: 20px;
 }
 
 .container table thead {
@@ -34,6 +35,7 @@
 
 .container table tbody tr {
   transition: all 50ms ease-in;
+  font-weight: 300;
 }
 .container table tbody tr:hover {
   background-color: #00000010;
