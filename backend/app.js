@@ -1,7 +1,6 @@
-import express, { json } from "express";
+import express from "express";
 import cors from "cors";
 import mysql from "mysql2";
-import fs from "node:fs";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,7 +25,6 @@ app.use((req, res, next) => {
   );
   next();
 });
-
 
 app.get("/contrataciones", (req, res) => {
   try {
