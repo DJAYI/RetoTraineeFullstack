@@ -77,6 +77,9 @@ dialog[open] > .dialog-content {
   gap: 5px;
 }
 
+.fw-normal {
+  font-weight: normal;
+}
 .dialog-content .checkers label input {
   margin-inline: 5px;
   min-width: 20px;
