@@ -6,7 +6,6 @@ header .actions {
 .action {
   padding: 10px 20px;
   border: none;
-  background-color: #222;
   border-radius: 20px;
   cursor: pointer;
   font-size: 16px;

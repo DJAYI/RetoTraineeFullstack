@@ -1,14 +1,26 @@
+const tableContentBody = document.querySelector("#table-content-body");
+
 const getDataFromAPI = async () => {
-  const response = await fetch("http://localhost:3000/contrataciones/").then(
-    (response) => response.json()
-  );
+  const response = await fetch("http://localhost:3000/contrataciones/")
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("No se pudo obtener la información de la API");
+      }
+    })
+    .catch((error) => {
+      console.error("Ha ocurrido un error al obtener la información: " + error);
+      document.body.innerHTML +=
+        "<center><h2>No se pudo obtener la información</h2><center>";
+      return [{ error: true }];
+    });
   return response;
 };
 
 const response = await getDataFromAPI();
 
 const renderDataTable = (data) => {
-  const tableContentBody = document.querySelector("#table-content-body");
   tableContentBody.innerHTML = "";
 
   data.map((data, index) => {

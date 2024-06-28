@@ -23,12 +23,24 @@
 }
 
 .container table tbody tr:nth-child(even) {
-  background-color: #f2f2f205;
+  background-color: #00000005;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container table tbody tr:nth-child(even) {
+    background-color: #00000050;
+  }
 }
 
 .container table tbody tr {
   transition: all 50ms ease-in;
 }
 .container table tbody tr:hover {
-  background-color: #f2f2f210;
+  background-color: #00000010;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container table tbody tr:hover{
+    background-color: #000000a1;
+  }
 }

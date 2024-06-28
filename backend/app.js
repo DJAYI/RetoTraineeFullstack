@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import cors from "cors";
 import mysql from "mysql2";
+import fs from "node:fs";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,6 +17,16 @@ app.use(cors({ origin: "*" }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 
 app.get("/contrataciones", (req, res) => {
   try {
