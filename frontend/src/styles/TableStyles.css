@@ -36,13 +36,14 @@
 .container table tbody tr {
   transition: all 50ms ease-in;
   font-weight: 300;
+  font-size: 14.5px;
 }
 .container table tbody tr:hover {
   background-color: #00000010;
 }
 
 @media (prefers-color-scheme: dark) {
-  .container table tbody tr:hover{
+  .container table tbody tr:hover {
     background-color: #000000a1;
   }
 }
