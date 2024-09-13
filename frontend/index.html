@@ -3,13 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contrataciones</title>
 
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./src/styles/TableStyles.css" />
     <link rel="stylesheet" href="./src/styles/ActionBarStyles.css" />
 
     <link rel="shortcut icon" href="public/vite.svg" type="image/x-icon" />
+
+    <script
+      defer
+      src="./src/scripts/actions/Pagination.js"
+      type="module"
+    ></script>
+    <script defer src="./src/scripts/actions/Search.js" type="module"></script>
+    <script
+      defer
+      src="./src/scripts/actions/ExportJSON.js"
+      type="module"
+    ></script>
+    <script defer src="./src/scripts/actions/Filter.js" type="module"></script>
+    <script
+      defer
+      src="./src/scripts/actions/ToggleCols.js"
+      type="module"
+    ></script>
   </head>
   <body>
     <header>
@@ -233,11 +251,5 @@
     <aside>
       <div class="pagination" id="pagination"></div>
     </aside>
-
-    <script src="./src/scripts/actions/Pagination.js" type="module"></script>
-    <script src="./src/scripts/actions/Search.js" type="module"></script>
-    <script src="./src/scripts/actions/ExportJSON.js" type="module"></script>
-    <script src="./src/scripts/actions/Filter.js" type="module"></script>
-    <script src="./src/scripts/actions/ToggleCols.js" type="module"></script>
   </body>
 </html>

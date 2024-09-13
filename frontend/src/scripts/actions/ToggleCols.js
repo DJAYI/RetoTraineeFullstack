@@ -1,82 +1,78 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const ModalToggleCols = document.getElementById("toggle-cols-dialog");
-  const btnToggleCols = document.getElementById("btnToggleColumns");
-  const btnCloseDialog = document.getElementById("btnCloseDialog");
+/* eslint-disable no-undef */
+
+window.addEventListener('load', () => {
+  const $ = (selector) => document.querySelector(selector)
+  const $$ = (selector) => document.querySelectorAll(selector)
+
+  const elements = {
+    modalToggleCols: $('#toggle-cols-dialog'),
+    btnToggleCols: $('#btnToggleColumns'),
+    btnCloseDialog: $('#btnCloseDialog'),
+    cols: {
+      items: $$('.col-item'),
+      cantidad: $$('.col-cantidad'),
+      concepto: $$('.col-concepto'),
+      proveedor: $$('.col-proveedor'),
+      categoria: $$('.col-categoria'),
+      formaContratar: $$('.col-forma-contratar'),
+      pagosMensuales: $$('.col-pagos-mensuales'),
+      valorUnitario: $$('.col-valor-unitario'),
+      valorTotal: $$('.col-valor-total'),
+      valorDolar: $$('.col-valor-dolar'),
+      valorAnual: $$('.col-valor-anual')
+    }
+  }
+
+  const observerElements = new MutationObserver(() => {
+    elements.cols = {
+      items: $$('.col-item'),
+      cantidad: $$('.col-cantidad'),
+      concepto: $$('.col-concepto'),
+      proveedor: $$('.col-proveedor'),
+      categoria: $$('.col-categoria'),
+      formaContratar: $$('.col-forma-contratar'),
+      pagosMensuales: $$('.col-pagos-mensuales'),
+      valorUnitario: $$('.col-valor-unitario'),
+      valorTotal: $$('.col-valor-total'),
+      valorDolar: $$('.col-valor-dolar'),
+      valorAnual: $$('.col-valor-anual')
+    }
+  })
+
+  observerElements.observe(document.body, { childList: true, subtree: true, attributes: true })
+
+  const getCols = () => Object.values(elements.cols).flat()
+
+  const toggleColumnVisibility = (value, checked) => {
+    getCols().forEach((col) => {
+      col.forEach((td) => {
+        if (td.classList.contains(value)) {
+          td.style.display = checked ? 'none' : 'table-cell'
+        }
+      })
+    })
+  }
 
   const updateColumns = () => {
-    const colsItems = document.querySelectorAll(".col-item");
-    const colsCantidad = document.querySelectorAll(".col-cantidad");
-    const colsConcepto = document.querySelectorAll(".col-concepto");
-    const colsProveedor = document.querySelectorAll(".col-proveedor");
-    const colsCategoria = document.querySelectorAll(".col-categoria");
-    const colsFormaContratar = document.querySelectorAll(
-      ".col-forma-contratar"
-    );
-    const colsPagosMensuales = document.querySelectorAll(
-      ".col-pagos-mensuales"
-    );
-    const colsValorUnitario = document.querySelectorAll(".col-valor-unitario");
-    const colsValorTotal = document.querySelectorAll(".col-valor-total");
-    const colsValorDolar = document.querySelectorAll(".col-valor-dolar");
-    const colsValorAnual = document.querySelectorAll(".col-valor-anual");
-
-    const AllCols = [
-      ...colsItems,
-      ...colsCantidad,
-      ...colsConcepto,
-      ...colsProveedor,
-      ...colsCategoria,
-      ...colsFormaContratar,
-      ...colsPagosMensuales,
-      ...colsValorUnitario,
-      ...colsValorTotal,
-      ...colsValorDolar,
-      ...colsValorAnual,
-    ];
-
-    //Checkboxes
-    const checkboxes = document.querySelectorAll(".checkbox");
+    const checkboxes = document.querySelectorAll('.checkbox')
     checkboxes.forEach((checkbox) => {
-      checkbox.addEventListener("change", (e) => {
-        const target = e.target;
-        const value = target.value.toString().trim();
-        const checked = target.checked;
-        console.log(value, checked);
-        if (checked) {
-          AllCols.forEach((col) => {
-            if (col.classList.contains(value)) {
-              col.classList.add("hidden");
-            }
-          });
-        } else {
-          AllCols.forEach((col) => {
-            if (col.classList.contains(value)) {
-              col.classList.remove("hidden");
-            }
-          });
-        }
-      });
-    });
-  };
+      checkbox.addEventListener('change', (e) => {
+        const { value, checked } = e.target
+        toggleColumnVisibility(value.trim(), checked)
+      })
+    })
+  }
 
-  const observer = new MutationObserver((mutations) => {
-    updateColumns();
-  });
+  const observer = new MutationObserver(updateColumns)
+  observer.observe(document.body, { childList: true, subtree: true, attributes: true })
 
-  // Configurar el observador
-  const config = { childList: true, subtree: true };
+  elements.btnToggleCols.addEventListener('click', () => {
+    elements.modalToggleCols.showModal()
+  })
 
-  // Comenzar a observar el cuerpo del documento
-  observer.observe(document.body, config);
+  elements.btnCloseDialog.addEventListener('click', () => {
+    elements.modalToggleCols.close()
+  })
 
-  btnToggleCols.addEventListener("click", () => {
-    ModalToggleCols.showModal();
-  });
-
-  btnCloseDialog.addEventListener("click", () => {
-    ModalToggleCols.close();
-  });
-
-  // Inicializar las columnas
-  updateColumns();
-});
+  updateColumns()
+})
